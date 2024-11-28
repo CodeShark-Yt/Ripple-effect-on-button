@@ -1,0 +1,43 @@
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+}
+
+.ripple-btn {
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+	overflow: hidden;
+	position: relative;
+}
+
+.ripple-btn:focus {
+	outline: none;
+}
+
+.ripple-btn:after {
+	content: "";
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: radial-gradient(circle, #fff 10%, transparent 10%);
+	background-repeat: no-repeat;
+	background-position: 50%;
+	transform: scale(10);
+	opacity: 0;
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.ripple-btn:active:after {
+	transform: scale(0);
+	opacity: 1;
+	background-position: 50% 50%;
+	transition: 0s;
+}
